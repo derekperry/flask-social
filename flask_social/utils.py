@@ -75,7 +75,7 @@ def update_recursive(d, u):
     except AttributeError:
         func = dict.items
     
-    for k, v in u.func:
+    for k, v in u.func():
         if isinstance(v, collections.Mapping):
             r = update_recursive(d.get(k, {}), v)
             d[k] = r
